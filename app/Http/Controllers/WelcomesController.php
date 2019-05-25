@@ -17,7 +17,7 @@ class WelcomesController extends Controller
     public function saveProduct(Request $request)
     {
         $product = new Product();
-        $product->name = $request->input('name');
+        $product->product_name = $request->input('name');
         $product->save();
 
         echo "<script>alert('Produsul a fost salvat!');</script>";

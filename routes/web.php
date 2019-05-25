@@ -14,10 +14,9 @@
 Route::get('/', 'WelcomesController@index');
 Route::post('/', 'WelcomesController@saveProduct');
 
-Route::get('/lichidari', 'PagesController@lichidari');
-
 Route::get('/contract', 'ContractsController@index');
+Route::post('/contract', 'ContractsController@saveContract');
 
 
-
+Route::get('/lichidari', 'PagesController@lichidari');
 

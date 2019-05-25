@@ -18,7 +18,7 @@
             </div>
                 <div class="container">
                 <label for="uname"><b>Nume Produs</b></label>
-                <input type="text" placeholder="Nume.." name="name" required title="Campul este necesar">
+                <input type="text" placeholder="Nume.." name="name" required>
                 {{-- <input type="submit" value="Trimite" class="btn btn-primary" id="submitBtn"> --}}
                 <button class="button-modal-submit" type="submit">Adauga</button>
             </div>
