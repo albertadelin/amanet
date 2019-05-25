@@ -1,0 +1,57 @@
+.main-content{
+    padding:20px;
+    margin-top:30px;
+    background-color:#fff;
+    height:1500px;
+}
+
+.header{
+    background: #111;
+    height: 100px;
+}
+
+.header h1{
+    color: gold;
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+}
+
+body {
+    font-size: 28px;
+    margin: 0;
+    /* display: inline-grid; */
+}
+  
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #293133;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: gold;
+    color: #111;
+}
+
+.active {
+    background-color: gold;
+    color: #111;
+}
