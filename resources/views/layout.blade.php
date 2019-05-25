@@ -19,7 +19,6 @@
         <li ><a href="/">Acasa</a></li>
         <li ><a href="/contract">Contract</a></li>
         <li ><a href="/lichidari">Lichidari</a></li>
-        <li ><a href="/produs">Adauga produs</a></li>
     </ul>
 
     
