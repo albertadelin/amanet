@@ -16,23 +16,7 @@
 <body>
 
     
-        <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-
-        <script>
-    
-          feather.replace()
-    
-        </script>
-    
         
-    
-    
-    
-        <!-- Graphs -->
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    
-        <div class="container-fluid">
 
     <div class="header">
         <h1>Amanet</h1>
@@ -41,7 +25,7 @@
      <ul class="nav navbar-nav">
         <li ><a href="/">Acasa</a></li>
         <li ><a href="/contract">Contract</a></li>
-        <li ><a href="/produs">Produse</a></li>
+        <li ><a href="/produse">Produse</a></li>
         <li ><a href="/lichidari">Lichidari</a></li>
     </ul>
 
