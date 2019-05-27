@@ -11,12 +11,20 @@
 |
 */
 
-Route::get('/', 'WelcomesController@index');
-Route::post('/', 'WelcomesController@saveProduct');
+Route::get('/', function(){
+    return view('welcome');
+});
+
+
+Route::get('/produse', 'ProductsController@index');
+Route::get('/produse/show', 'ProductsController@tableData');
+Route::post('/produse', 'ProductsController@create');
+Route::get('/produs/{id}/delete', 'ProductsController@destroy');
 
 Route::get('/contract', 'ContractsController@index');
-Route::post('/contract', 'ContractsController@saveContract');
-
+Route::get('/contract/show', 'ContractsController@tableData');
+Route::post('/contract', 'ContractsController@create');
+Route::get('/contract/{id}/delete', 'ContractsController@destroy');
 
 Route::get('/lichidari', 'PagesController@lichidari');
 

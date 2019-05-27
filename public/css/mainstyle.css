@@ -114,17 +114,21 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
-.add-product-modal, .button-modal-submit{
+.add-product-modal, .button-modal-submit, .add-contract-modal{
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
-  margin: 8px 0;
+  margin: 8px 0 0 16px;
   border: none;
   cursor: pointer;
   width: 100%;
 }
 
 .add-product-modal:hover {
+  opacity: 0.8;
+}
+
+.add-contract-modal:hover{
   opacity: 0.8;
 }
 
@@ -137,7 +141,7 @@ input[type=text], input[type=password] {
 
 /* Center the image and position the close button */
 .imgcontainer {
-  text-align: center;
+  /* text-align: center; */
   margin: 24px 0 12px 0;
   position: relative;
 }
@@ -220,4 +224,15 @@ span.psw {
   .cancelbtn {
      width: 100%;
   }
+}
+
+/* ############################################## */
+
+.table{
+  margin: 16px;
+  font-size:18px;
+}
+
+.table td{
+  text-align: center;
 }

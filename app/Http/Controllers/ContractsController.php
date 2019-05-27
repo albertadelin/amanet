@@ -8,6 +8,12 @@ use App\Contract;
 
 class ContractsController extends Controller
 {
+    public function tableData()
+    {
+        $contracts = Contract::all();
+        return json_encode(['data' => $contracts]);
+    }
+
     public function index()
     {
         $products = Product::all();
@@ -15,7 +21,7 @@ class ContractsController extends Controller
         return view('contract', compact('products'));
     }
 
-    public function saveContract(Request $request)
+    public function create(Request $request)
     {
         $products = Product::all();
         $contracts = new Contract();
@@ -33,6 +39,22 @@ class ContractsController extends Controller
 
         $contracts->save();
 
-        return redirect()->to('/');
+        return redirect()->to('/contract');
+    }
+
+
+
+    public function destroy($id)
+    {
+        $contract = Contract::find($id);
+        $contract->delete();
+
+        return response()->json('contractul a fost sters');
+
+    }
+
+    public function update()
+    {
+        
     }
 }

@@ -9,8 +9,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 </head>
 <body>
+
+    
+        <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+
+        <script>
+    
+          feather.replace()
+    
+        </script>
+    
+        
+    
+    
+    
+        <!-- Graphs -->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    
+        <div class="container-fluid">
+
     <div class="header">
         <h1>Amanet</h1>
     </div>
@@ -18,6 +41,7 @@
      <ul class="nav navbar-nav">
         <li ><a href="/">Acasa</a></li>
         <li ><a href="/contract">Contract</a></li>
+        <li ><a href="/produs">Produse</a></li>
         <li ><a href="/lichidari">Lichidari</a></li>
     </ul>
 
