@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contract extends Model
 {
-    // public function products()
-    // {
-    //     return $this->hasMany(Product::class, 'product_id');
-    // }
+    protected $primaryKey = 'contract_id';
+
+    public function products()
+    {
+        return $this->belongsTo(Product::class, 'product_id');
+    }
 }

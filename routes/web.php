@@ -26,5 +26,8 @@ Route::get('/contract/show', 'ContractsController@tableData');
 Route::post('/contract', 'ContractsController@create');
 Route::get('/contract/{id}/delete', 'ContractsController@destroy');
 
+Route::get('/contract/{id}/update/form', 'ContractsController@indexUpdate');
+Route::post('/contract/{id}/update', 'ContractsController@update')->name('contract_update');
+
 Route::get('/lichidari', 'PagesController@lichidari');
 

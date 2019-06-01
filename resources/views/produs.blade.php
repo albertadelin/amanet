@@ -16,9 +16,20 @@
             </div>
                 <div class="container">
                 <label for="uname"><b>Nume Produs</b></label>
-                <input type="text" placeholder="Nume.." name="name" required>
-                {{-- <input type="submit" value="Trimite" class="btn btn-primary" id="submitBtn"> --}}
-                <button class="button-modal-submit" type="submit">Adauga</button>
+                <input type="text" placeholder="Nume.." name="name">
+                <input type="submit" value="Adauga" class="btn btn-primary" id="submitBtn">
+
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li style="color:red">{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                {{-- <button class="button-modal-submit" type="submit">Adauga</button> --}}
             </div>
 
             <div class="container" style="background-color:#f1f1f1">

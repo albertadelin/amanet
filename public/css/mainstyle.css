@@ -236,3 +236,9 @@ span.psw {
 .table td{
   text-align: center;
 }
+
+/* ################################# */
+
+.alert-danger{
+  font-size: 18px;
+}

@@ -22,6 +22,10 @@ class ProductsController extends Controller
 
     public function create(Request $request)
     {
+        $validatedData = $request->validate([
+            'name' => 'required|max:255'
+        ]);
+        
         $product = new Product();
         $product->product_name = $request->input('name');
         $product->save();

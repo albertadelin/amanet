@@ -14,7 +14,7 @@
                     <div>
                         <div class="container">
                             <label class="label-name">Nume si Prenume</label><br>
-                            <input type="text" id="input-name" name="full_name" placeholder="Nume si Prenume..."><br>
+                            <input type="text" id="input-name" name="full_name" placeholder="Nume si Prenume..." ><br>
                             
                             <label class="label-cnp">CNP</label><br>
                             <input type="text" id="input-cnp" name="cnp" placeholder="CNP..."><br>
@@ -41,6 +41,16 @@
 
                             <label class="label-amount">Suma imprumutata</label><br>
                             <input type="number" step="0.01" id="input-amount" name="amount" placeholder="Suma imprumutata..."><br>
+                            
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li style="color:red">{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             
                             <input type="submit" value="Trimite"><br>
                         </div>
@@ -76,6 +86,7 @@
 </div>
 
 
+
 <script>
     $(document).ready( function () {
         var table = $('#contract-table').DataTable({
@@ -91,16 +102,16 @@
                 { "data": "city" },
                 { "data": "address_details" },
                 { "data": "contract_date" },
-                { "data": "product_id" },
+                { "data": "products.product_name" },
                 { "data": "amount" },
                 { "data" : "contract_id",
                     "render": function ( data, type, row, meta ) {
-                        return '<button class="btn btn-info update-btn" data-id="'+ data +'">Update</button>';
+                        return '<a href="/contract/'+data+'/update/form" class="btn btn-info update-btn" data-id="'+ data +'">Update</a>';
                     },
                 },
                 { "data" : "contract_id",
                     "render": function ( data, type, row, meta ) {
-                        return '<a href="/contract/'+data+'/delete" class="btn btn-danger delete-btn" data-id="'+ data +'">Delete</a>';
+                        return '<a href="/contract/'+data+'/delete" class="btn btn-danger delete-btn" onclick="return confirm(\'Sigur vrei sa stergi contractul?\')" data-id="'+ data +'">Delete</a>';
                 },
                 }
             ],

@@ -10,12 +10,20 @@ $( document ).ready(function() {
         }
     }
 
-    $('.modal-content input[type=text]').on('change invalid', function() {
-        var textfield = $(this).get(0);
+    if($('.alert-danger').length){
+        modal.style.display = "block";
+    }
+
+    // $('.modal-content input[type=text]').on('change invalid', function() {
+    //     var textfield = $(this).get(0);
         
-        if (!textfield.validity.valid) {
-          textfield.setCustomValidity('Camp invalid');  
-        }
+    //     if (!textfield.validity.valid) {
+    //       textfield.setCustomValidity('Camp invalid');  
+    //     }
+    // });
+
+    $(".delete-btn").on("click", function(){
+        return confirm("Sigur vrei sa stergi?");
     });
 
 });
