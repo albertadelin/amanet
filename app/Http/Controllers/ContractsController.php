@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Contract;
+use PDF;
 
 class ContractsController extends Controller
 {
@@ -100,7 +101,11 @@ class ContractsController extends Controller
 
     public function generatePdf($id)
     {
-        $contracts = Contract::find($id);
+        $contract = Contract::find($id);
+        $data = ['data' => $contract];
+        $pdf = PDF::loadView('demoPDF', $data);
+
+        return $pdf->download('demo.pdf');
         // dd($contracts);
     }
 }
