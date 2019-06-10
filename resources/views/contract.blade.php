@@ -62,6 +62,7 @@
 
 </div>
 </div>
+
 <div class="table">
     <table id="contract-table" class="display">
         <thead>
@@ -75,8 +76,9 @@
                 <th>Data contractului</th>
                 <th>Produs</th>
                 <th>Suma</th>
-                <th>Update</th>
-                <th>Delete</th>
+                <th>Modifica</th>
+                <th>Sterge</th>
+                <th>Genereaza PDF</th>
             </tr>
         </thead>
         <tbody>
@@ -106,13 +108,18 @@
                 { "data": "amount" },
                 { "data" : "contract_id",
                     "render": function ( data, type, row, meta ) {
-                        return '<a href="/contract/'+data+'/update/form" class="btn btn-info update-btn" data-id="'+ data +'">Update</a>';
+                        return '<a href="/contract/'+data+'/update/form" class="genric-btn info circle" data-id="'+ data +'">Modifica</a>';
                     },
                 },
                 { "data" : "contract_id",
                     "render": function ( data, type, row, meta ) {
-                        return '<a href="/contract/'+data+'/delete" class="btn btn-danger delete-btn" onclick="return confirm(\'Sigur vrei sa stergi contractul?\')" data-id="'+ data +'">Delete</a>';
+                        return '<a href="/contract/'+data+'/delete" class="genric-btn danger circle" onclick="return confirm(\'Sigur vrei sa stergi contractul?\')" data-id="'+ data +'">Sterge</a>';
+                    },
                 },
+                { "data" : "contract_id",
+                    "render": function ( data, type, row, meta ) {
+                        return '<a href="/pdf/'+data+'" class="genric-btn primary circle" data-id="'+ data +'">PDF</a>';
+                    },
                 }
             ],
 

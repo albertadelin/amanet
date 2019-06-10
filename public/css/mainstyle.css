@@ -242,3 +242,7 @@ span.psw {
 .alert-danger{
   font-size: 18px;
 }
+
+.uname b{
+  color: black !important;
+}

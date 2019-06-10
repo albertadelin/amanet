@@ -34,13 +34,33 @@ class ProductsController extends Controller
         return redirect()->to('/produse');
     }
 
-    public function deete($id)
+    public function destroy($id)
     {
         $product = Product::find($id);
         $product->delete();
 
-        return response()->json('produsul a fost sters');
+        return redirect('/produse');
 
+    }
+
+    public function indexUpdate($id)
+    {
+        $product = Product::find($id);
+
+        return view('update_produs', compact('product'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'product_name' => 'required|max:255',
+        ]);
+
+        $product = Product::find($id);
+        $product->product_name = $request->input('product_name');
+        $product->save();
+
+        return redirect('/produse');
     }
 
 }

@@ -44,8 +44,8 @@
                 <tr>
                     <th>Id</th>
                     <th>Nume produs</th>
-                    <th>Update</th>
-                    <th>Delete</th>
+                    <th>Modifica</th>
+                    <th>Sterge</th>
                 </tr>
             </thead>
             <tbody>
@@ -67,18 +67,16 @@
                     { "data": "product_name" },
                     { "data" : "product_id",
                         "render": function ( data, type, row, meta ) {
-                            return '<button class="btn btn-info update-btn" data-id="'+ data +'">Update</button>';
+                            return '<a href="/produs/'+data+'/update/form" class="genric-btn info circle" data-id="'+ data +'">Modifica</a>';
                         },
                     },
                     { "data" : "product_id",
                         "render": function ( data, type, row, meta ) {
-                            return '<a href="/produs/'+data+'/delete" class="btn btn-danger delete-btn" data-id="'+ data +'">Delete</a>';
+                            return '<a href="/produs/'+data+'/delete" class="genric-btn danger circle" onclick="return confirm(\'Sigur vrei sa stergi produsul?\')" data-id="'+ data +'">Sterge</a>';
                     },
                     }
                 ],
-    
                 "lengthMenu": [[10, 25, -1], [10, 25, "All"]]
-    
                 });
         } );
     </script>

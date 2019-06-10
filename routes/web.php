@@ -20,6 +20,8 @@ Route::get('/produse', 'ProductsController@index');
 Route::get('/produse/show', 'ProductsController@tableData');
 Route::post('/produse', 'ProductsController@create');
 Route::get('/produs/{id}/delete', 'ProductsController@destroy');
+Route::get('/produs/{id}/update/form', 'ProductsController@indexUpdate');
+Route::post('/produs/{id}/update', 'ProductsController@update');
 
 Route::get('/contract', 'ContractsController@index');
 Route::get('/contract/show', 'ContractsController@tableData');
@@ -28,6 +30,10 @@ Route::get('/contract/{id}/delete', 'ContractsController@destroy');
 
 Route::get('/contract/{id}/update/form', 'ContractsController@indexUpdate');
 Route::post('/contract/{id}/update', 'ContractsController@update')->name('contract_update');
+
+Route::get('/pdf/{id}', 'ContractsController@generatePdf');
+
+
 
 Route::get('/lichidari', 'PagesController@lichidari');
 

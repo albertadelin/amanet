@@ -4,6 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link href="{{ asset('css/mainstyle.css') }}" rel="stylesheet">
     <script type="text/javascript" src="{{ asset('js/mainscript.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

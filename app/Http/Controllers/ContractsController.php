@@ -97,4 +97,10 @@ class ContractsController extends Controller
 
         return redirect('/contract');
     }
+
+    public function generatePdf($id)
+    {
+        $contracts = Contract::find($id);
+        // dd($contracts);
+    }
 }
