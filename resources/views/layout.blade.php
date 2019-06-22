@@ -21,11 +21,12 @@
 
     <div class="header">
         <h1>Amanet</h1>
+        <h1 style="color: white; ">@yield('title')</h1>
     </div>
 
      <ul class="nav navbar-nav">
         <li ><a href="/">Acasa</a></li>
-        <li ><a href="/contract">Contract</a></li>
+        <li ><a href="/contract">Contracte</a></li>
         <li ><a href="/produse">Produse</a></li>
         <li ><a href="/lichidari">Lichidari</a></li>
     </ul>

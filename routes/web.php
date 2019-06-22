@@ -35,5 +35,7 @@ Route::get('/pdf/{id}', 'ContractsController@generatePdf');
 
 
 
-Route::get('/lichidari', 'PagesController@lichidari');
+Route::get('/lichidari', 'LiquidationsController@index');
+Route::get('/lichidari/pdf/{id}', 'LiquidationsController@generatePdf');
+Route::get('/lichidari/show', 'LiquidationsController@tableData');
 

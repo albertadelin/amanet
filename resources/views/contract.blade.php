@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title','Contract')
+@section('title','Contracte')
 
 @section('content')
 
@@ -77,7 +77,7 @@
                 <th>Produs</th>
                 <th>Suma</th>
                 <th>Modifica</th>
-                <th>Sterge</th>
+                <th>Lichidare</th>
                 <th>Genereaza PDF</th>
             </tr>
         </thead>
@@ -113,7 +113,7 @@
                 },
                 { "data" : "contract_id",
                     "render": function ( data, type, row, meta ) {
-                        return '<a href="/contract/'+data+'/delete" class="genric-btn danger circle" onclick="return confirm(\'Sigur vrei sa stergi contractul?\')" data-id="'+ data +'">Sterge</a>';
+                        return '<a href="/contract/'+data+'/delete" class="genric-btn danger circle" onclick="return confirm(\'Sigur vrei sa lichidezi contractul?\')" data-id="'+ data +'">Lichideaza</a>';
                     },
                 },
                 { "data" : "contract_id",

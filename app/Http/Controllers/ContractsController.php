@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Contract;
+use App\Liquidation;
 use PDF;
 
 class ContractsController extends Controller
@@ -60,11 +61,30 @@ class ContractsController extends Controller
         return redirect()->to('/contract');
     }
 
+    public function createLiquidation($contract)
+    {
+        $lichidare = new Liquidation();
+        $product = Product::find($contract->product_id);
 
+        $lichidare->full_name = $contract->full_name;
+        $lichidare->cnp = $contract->cnp;
+        $lichidare->telephone = $contract->telephone;
+        $lichidare->city = $contract->city;
+        $lichidare->address_details = $contract->address_details;
+        $lichidare->contract_date =  $contract->contract_date;
+        $lichidare->product_name = $product->product_name;
+        $lichidare->amount = $contract->amount;
+
+        $lichidare->save();
+
+        return redirect()->to('/contract');
+    }
 
     public function destroy($id)
     {
         $contract = Contract::find($id);
+        $this->createLiquidation($contract);
+
         $contract->delete();
 
         return redirect('/contract');
@@ -102,10 +122,14 @@ class ContractsController extends Controller
     public function generatePdf($id)
     {
         $contract = Contract::find($id);
-        $data = ['data' => $contract];
-        $pdf = PDF::loadView('demoPDF', $data);
+        $product = Product::find($contract->product_id);
+        $data = ['data' => $contract, 'product' => $product];
+        $pdf = PDF::loadView('contractPDF', $data);
 
-        return $pdf->download('demo.pdf');
-        // dd($contracts);
+        $pdfName = $contract->contract_id . "_" 
+                    .str_replace(" ", "_", preg_replace('!\s+!', ' ', $contract->full_name)). "_" 
+                    .date("Y/m/d").".pdf";
+
+        return $pdf->download($pdfName);
     }
 }

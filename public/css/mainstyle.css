@@ -32,6 +32,7 @@ body {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
+    z-index: 1;
 }
 
 .navbar-nav li {
@@ -246,3 +247,19 @@ span.psw {
 .uname b{
   color: black !important;
 }
+
+/* ############################################## */
+
+.content-home{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.content-home h2{
+  text-align: center;
+}
+
+.content-home .company {
+  margin-left: 5%;
+}
+
+
